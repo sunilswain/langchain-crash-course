@@ -3,7 +3,7 @@ import os
 from dotenv import load_dotenv
 from langchain_community.vectorstores import Chroma
 from langchain_core.messages import HumanMessage, SystemMessage
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_groq import ChatGroq, OpenAIEmbeddings
 
 # Load environment variables from .env
 load_dotenv()
@@ -45,7 +45,7 @@ combined_input = (
 )
 
 # Create a ChatOpenAI model
-model = ChatOpenAI(model="gpt-4o")
+model = ChatGroq(model="llama-3.1-8b-instant")
 
 # Define the messages for the model
 messages = [

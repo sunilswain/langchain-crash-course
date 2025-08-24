@@ -5,7 +5,7 @@ from langchain.agents import (
     create_react_agent,
 )
 from langchain_core.tools import Tool
-from langchain_openai import ChatOpenAI
+from langchain_groq import ChatGroq
 
 # Load environment variables from .env file
 load_dotenv()

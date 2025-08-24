@@ -6,7 +6,7 @@ from langchain.chains.combine_documents import create_stuff_documents_chain
 from langchain_community.vectorstores import Chroma
 from langchain_core.messages import HumanMessage, SystemMessage
 from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
-from langchain_openai import ChatOpenAI, OpenAIEmbeddings
+from langchain_groq import ChatGroq, OpenAIEmbeddings
 
 # Load environment variables from .env
 load_dotenv()
@@ -30,7 +30,7 @@ retriever = db.as_retriever(
 )
 
 # Create a ChatOpenAI model
-llm = ChatOpenAI(model="gpt-4o")
+llm = ChatGroq(model="llama-3.1-8b-instant")
 
 # Contextualize question prompt
 # This system prompt helps the AI understand that it should reformulate the question
