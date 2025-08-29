@@ -29,7 +29,7 @@ retriever = db.as_retriever(
     search_kwargs={"k": 3},
 )
 
-# Create a ChatOpenAI model
+# Create a ChatGroq model
 llm = ChatGroq(model="llama-3.1-8b-instant")
 
 # Contextualize question prompt

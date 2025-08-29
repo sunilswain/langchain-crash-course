@@ -47,7 +47,7 @@ tools = [
 # Load the correct JSON Chat Prompt from the hub
 prompt = hub.pull("hwchase17/structured-chat-agent")
 
-# Initialize a ChatOpenAI model
+# Initialize a ChatGroq model
 llm = ChatGroq(model="llama-3.1-8b-instant")
 
 # Create a structured Chat Agent with Conversation Buffer Memory

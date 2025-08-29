@@ -44,7 +44,7 @@ combined_input = (
     + "\n\nPlease provide an answer based only on the provided documents. If the answer is not found in the documents, respond with 'I'm not sure'."
 )
 
-# Create a ChatOpenAI model
+# Create a ChatGroq model
 model = ChatGroq(model="llama-3.1-8b-instant")
 
 # Define the messages for the model

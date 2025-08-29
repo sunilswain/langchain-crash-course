@@ -44,7 +44,7 @@ from langchain_core.messages import HumanMessage
 # print(prompt)
 
 
-# This does NOT work:
+# # This does NOT work:
 messages = [
     ("system", "You are a comedian who tells jokes about {topic}."),
     HumanMessage(content="Tell me {joke_count} jokes."),

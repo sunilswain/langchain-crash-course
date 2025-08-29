@@ -7,7 +7,7 @@ from langchain_groq import ChatGroq
 # Load environment variables from .env
 load_dotenv()
 
-# Create a ChatOpenAI model
+# Create a ChatGroq model
 model = ChatGroq(model="llama-3.1-8b-instant")
 
 # Define prompt template

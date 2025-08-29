@@ -55,7 +55,7 @@ tools = [
     concatenate_strings,  # Tool with two parameters using args_schema
 ]
 
-# Initialize a ChatOpenAI model
+# Initialize a ChatGroq model
 llm = ChatGroq(model="llama-3.1-8b-instant")
 
 # Pull the prompt template from the hub

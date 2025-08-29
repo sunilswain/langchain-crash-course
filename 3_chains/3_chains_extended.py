@@ -7,7 +7,7 @@ from langchain_groq import ChatGroq
 # Load environment variables from .env
 load_dotenv()
 
-# Create a ChatOpenAI model
+# Create a ChatGroq model
 model = ChatGroq(model="llama-3.1-8b-instant")
 
 # Define prompt templates
@@ -20,7 +20,12 @@ prompt_template = ChatPromptTemplate.from_messages(
 
 # Define additional processing steps using RunnableLambda
 uppercase_output = RunnableLambda(lambda x: x.upper())
-count_words = RunnableLambda(lambda x: f"Word count: {len(x.split())}\n{x}")
+
+def get_word_count(x):
+    # processing
+    return f"Word count: {len(x.split())}\n{x}"
+
+count_words = RunnableLambda(lambda x: get_word_count(x))
 
 # Create the combined chain using LangChain Expression Language (LCEL)
 chain = prompt_template | model | StrOutputParser() | uppercase_output | count_words

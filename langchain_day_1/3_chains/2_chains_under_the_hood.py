@@ -24,10 +24,9 @@ parser = StrOutputParser()
 format_prompt = RunnableLambda(lambda x: prompt_template.invoke(x))
 invoke_model = RunnableLambda(lambda x: model.invoke(x.to_messages()))
 parse_output = RunnableLambda(lambda x: parser.invoke(x))
-char_count = RunnableLambda(lambda x: len(x))
 
 # Create the RunnableSequence (equivalent to the LCEL chain)
-chain = RunnableSequence(first=format_prompt, middle=[invoke_model, parse_output], last=char_count)
+chain = RunnableSequence(first=format_prompt, middle=[invoke_model], last=parse_output)
 
 # Run the chain
 response = chain.invoke({"topic": "lawyers", "joke_count": 3})
